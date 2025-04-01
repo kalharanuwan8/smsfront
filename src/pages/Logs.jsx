@@ -11,12 +11,12 @@ function Logs() {
   }, []);
 
   const handleDownload = () => {
-    window.location.href = "http://localhost:5000/logs/download";
+    window.location.href = "https://smsbackend-chi.vercel.app/logs/download";
   };
 
   const fetchlogs = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logs");
+      const response = await fetch("https://smsbackend-chi.vercel.app/logs");
       if (!response.ok) {
         throw new Error("Failed to fetch logs");
       }

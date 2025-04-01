@@ -30,7 +30,7 @@ function Students() {
 
   const fetchstudents = async () => {
     try {
-      const response = await fetch("http://localhost:5000/students");
+      const response = await fetch("https://smsbackend-chi.vercel.app/students");
       if (!response.ok) {
         throw new Error("Failed to fetch students");
       }
@@ -77,7 +77,7 @@ function Students() {
   const handleDelete = async (student_no) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       try {
-        const response = await fetch("http://localhost:5000/students", {
+        const response = await fetch("https://smsbackend-chi.vercel.app/students", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ student_no }),
@@ -118,7 +118,7 @@ function Students() {
       if (isEditing && selectedStudent) {
         body.student_no = selectedStudent.student_no;
       }
-      const response = await fetch("http://localhost:5000/students" + (isEditing ? "" : "/addstudents"), {
+      const response = await fetch("https://smsbackend-chi.vercel.app/students" + (isEditing ? "" : "/addstudents"), {
         method: isEditing ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -146,7 +146,7 @@ function Students() {
     setstudents([]); // Clear previous results
 
     try {
-      const response = await fetch("http://localhost:5000/students/searchstudents", {
+      const response = await fetch("https://smsbackend-chi.vercel.app/students/searchstudents", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ searchterm }),

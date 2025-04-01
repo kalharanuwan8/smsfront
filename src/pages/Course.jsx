@@ -19,7 +19,7 @@ function Course() {
 
   const fetchCourses = async () => {
     try {
-      const response = await fetch("http://localhost:5000/course");
+      const response = await fetch("https://smsbackend-chi.vercel.app/course");
       const data = await response.json();
       setCourses(data);
     } catch (error) {
@@ -29,7 +29,7 @@ function Course() {
 
   const handleDownload = async () => {
     try {
-      window.location.href = "http://localhost:5000/course/download";
+      window.location.href = "https://smsbackend-chi.vercel.app/course/download";
     } catch (error) {
       console.log(error.message);
     }
@@ -55,7 +55,7 @@ function Course() {
     }
 
     try {
-      let url = "http://localhost:5000/course";
+      let url = "https://smsbackend-chi.vercel.app/course";
       let method = "POST";
       let body = { courseid, coursename };
 
@@ -103,7 +103,7 @@ function Course() {
   const handleDelete = async (courseid) => {
     if (window.confirm("Are you sure you want to delete this course?")) {
       try {
-        const response = await fetch("http://localhost:5000/course", {
+        const response = await fetch("https://smsbackend-chi.vercel.app/course", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ courseid }),

@@ -33,7 +33,7 @@ function Dashboard() {
     useEffect(() => {
         const fetchStudentCount = async () => {
             try {
-                const response = await fetch('http://localhost:5000/dashboard/stcount');
+                const response = await fetch('https://smsbackend-chi.vercel.app/dashboard/stcount');
                 if (!response.ok) {
                     throw new Error('Failed to fetch student count');
                 }
@@ -52,7 +52,7 @@ function Dashboard() {
     useEffect(() => {
         const fetchCourseCount = async () => {
             try {
-                const response = await fetch('http://localhost:5000/dashboard/coursecount');
+                const response = await fetch('https://smsbackend-chi.vercel.app/dashboard/coursecount');
                 if (!response.ok) {
                     throw new Error('Failed to fetch course count');
                 }
